@@ -1,0 +1,75 @@
+{
+  "retrievedAt": "2026-10-16",
+  "publicationYear": 2026,
+  "referenceYear": 2025,
+  "projectionEndYear": 2035,
+  "geographyId": "US",
+  "records": [
+    {
+      "soc": "15-1252",
+      "title": "Software Developers, Quality Assurance Analysts, and Testers",
+      "url": "https://www.bls.gov/ooh/computer-and-information-technology/software-developers.htm",
+      "medianAnnual": 135980,
+      "medianHourly": null,
+      "employment": 1717800,
+      "growthPercent": 10,
+      "averageAnnualOpenings": null,
+      "notes": "Pay, employment, and growth use the software developers subgroup. The page's 106,100 annual openings cover developers AND quality assurance analysts and testers, so that group figure is not assigned to this occupation. An occupation-specific hourly median was not captured."
+    },
+    {
+      "soc": "29-1141",
+      "title": "Registered Nurses",
+      "url": "https://www.bls.gov/ooh/healthcare/registered-nurses.htm",
+      "medianAnnual": 97550,
+      "medianHourly": 46.90,
+      "employment": 3465400,
+      "growthPercent": 6,
+      "averageAnnualOpenings": 180800,
+      "notes": null
+    },
+    {
+      "soc": "47-2111",
+      "title": "Electricians",
+      "url": "https://www.bls.gov/ooh/construction-and-extraction/electricians.htm",
+      "medianAnnual": 63190,
+      "medianHourly": 30.38,
+      "employment": 821000,
+      "growthPercent": 9,
+      "averageAnnualOpenings": 72700,
+      "notes": null
+    },
+    {
+      "soc": "17-2141",
+      "title": "Mechanical Engineers",
+      "url": "https://www.bls.gov/ooh/architecture-and-engineering/mechanical-engineers.htm",
+      "medianAnnual": 104110,
+      "medianHourly": 50.05,
+      "employment": 298500,
+      "growthPercent": 11,
+      "averageAnnualOpenings": 17800,
+      "notes": null
+    },
+    {
+      "soc": "27-1024",
+      "title": "Graphic Designers",
+      "url": "https://www.bls.gov/ooh/arts-and-design/graphic-designers.htm",
+      "medianAnnual": 62960,
+      "medianHourly": 30.27,
+      "employment": 253100,
+      "growthPercent": -2,
+      "averageAnnualOpenings": 16000,
+      "notes": "Employment is projected to decline. Estimated annual openings come from replacements, rather than net employment growth. Wage estimates exclude self-employed designers."
+    },
+    {
+      "soc": "13-2011",
+      "title": "Accountants and Auditors",
+      "url": "https://www.bls.gov/ooh/business-and-financial/accountants-and-auditors.htm",
+      "medianAnnual": 83680,
+      "medianHourly": 40.23,
+      "employment": 1595200,
+      "growthPercent": 5,
+      "averageAnnualOpenings": 115300,
+      "notes": null
+    }
+  ]
+}
