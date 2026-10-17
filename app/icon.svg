@@ -1,11 +1,11 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64" fill="none" role="img" aria-labelledby="title">
   <title id="title">Career Path — an open book framed by olive branches</title>
-  <rect width="64" height="64" rx="14" fill="#173F36"/>
+  <rect width="64" height="64" rx="14" fill="#0F1E17"/>
 
   <!-- Olive branches represent growth and thoughtful guidance. -->
   <g id="branch">
-    <path d="M25 53C12 48 7 35 12 20" stroke="#D9BA73" stroke-width="2" stroke-linecap="round"/>
-    <g fill="#D9BA73">
+    <path d="M25 53C12 48 7 35 12 20" stroke="#E6C98B" stroke-width="2" stroke-linecap="round"/>
+    <g fill="#E6C98B">
       <path d="M11 28C5 26 5 21 6 18C11 20 13 24 11 28Z"/>
       <path d="M11 29C11 23 15 20 18 20C18 25 15 28 11 29Z"/>
       <path d="M11 39C5 38 3 34 4 30C9 31 12 34 11 39Z"/>
@@ -16,7 +16,7 @@
   <use href="#branch" transform="translate(64 0) scale(-1 1)"/>
 
   <!-- Broad pages and a clear spine stay legible at favicon sizes. -->
-  <path d="M18 24C23 22 27 22 32 25C37 22 41 22 46 24V44C41 42 37 43 32 46C27 43 23 42 18 44V24Z" fill="#F7F1DE"/>
-  <path d="M32 26V44" stroke="#173F36" stroke-width="2" stroke-linecap="round"/>
-  <path d="M22 30C24 29.5 26 30 28 31M22 35C24 34.5 26 35 28 36M36 31C38 30 40 29.5 42 30M36 36C38 35 40 34.5 42 35" stroke="#B29A62" stroke-width="1.75" stroke-linecap="round"/>
+  <path d="M18 24C23 22 27 22 32 25C37 22 41 22 46 24V44C41 42 37 43 32 46C27 43 23 42 18 44V24Z" fill="#F4FBF7"/>
+  <path d="M32 26V44" stroke="#0F1E17" stroke-width="2" stroke-linecap="round"/>
+  <path d="M22 30C24 29.5 26 30 28 31M22 35C24 34.5 26 35 28 36M36 31C38 30 40 29.5 42 30M36 36C38 35 40 34.5 42 35" stroke="#1FA971" stroke-width="1.75" stroke-linecap="round"/>
 </svg>

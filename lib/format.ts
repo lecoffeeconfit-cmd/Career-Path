@@ -1,12 +1,18 @@
 export function currency(value: number | null, fractionDigits = 0) {
-  return value === null ? "Not available" : new Intl.NumberFormat("en-US", {
-    style: "currency", currency: "USD", maximumFractionDigits: fractionDigits,
-    minimumFractionDigits: fractionDigits,
-  }).format(value);
+  return value === null
+    ? "Not available"
+    : new Intl.NumberFormat("en-US", {
+        style: "currency",
+        currency: "USD",
+        maximumFractionDigits: fractionDigits,
+        minimumFractionDigits: fractionDigits,
+      }).format(value);
 }
 
 export function number(value: number | null) {
-  return value === null ? "Not available" : new Intl.NumberFormat("en-US").format(value);
+  return value === null
+    ? "Not available"
+    : new Intl.NumberFormat("en-US").format(value);
 }
 
 export function growth(value: number | null) {

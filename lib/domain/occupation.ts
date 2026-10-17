@@ -1,9 +1,24 @@
 /** Shared domain contracts. Missing measurements are null, never invented zeros. */
-export type CareerFieldId = "technology" | "healthcare" | "trades" | "engineering" | "creative" | "finance";
-export type EducationLevel = "high-school" | "certificate" | "associate" | "bachelor" | "graduate";
+export type CareerFieldId =
+  | "technology"
+  | "healthcare"
+  | "trades"
+  | "engineering"
+  | "creative"
+  | "finance";
+export type EducationLevel =
+  | "high-school"
+  | "certificate"
+  | "associate"
+  | "bachelor"
+  | "graduate";
 export type WorkEnvironment = "office" | "clinical" | "hands-on";
 export type CompletionStatus = "not-started" | "in-progress" | "completed";
-export type EvidenceLevel = "demonstrated" | "correlational" | "expert-reasoning" | "hypothesis";
+export type EvidenceLevel =
+  | "demonstrated"
+  | "correlational"
+  | "expert-reasoning"
+  | "hypothesis";
 
 export interface ResearchReference {
   id: string;
@@ -72,7 +87,12 @@ export interface DegreeProgram {
   provider?: string;
   url?: string;
   /** Costs must identify a source or be an explicitly user-entered assumption. */
-  cost?: { amount: number; currency: "USD"; basis: "official" | "user-assumption"; sourceId?: string };
+  cost?: {
+    amount: number;
+    currency: "USD";
+    basis: "official" | "user-assumption";
+    sourceId?: string;
+  };
 }
 
 export interface EducationPathway {

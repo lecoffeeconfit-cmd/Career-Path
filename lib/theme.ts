@@ -1,4 +1,4 @@
-/** Shared semantic vocabulary for all four future visualization systems. */
+/** Shared semantic vocabulary for all four visualization systems. */
 export const visualizationTheme = {
   salary: "var(--gold)",
   milestone: "var(--gold)",

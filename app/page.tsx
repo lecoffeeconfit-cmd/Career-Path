@@ -1,69 +1,164 @@
-import Image from "next/image";
+import Link from "next/link";
+import { CareerDashboard } from "@/components/dashboard/career-dashboard";
+import regionalSnapshot from "@/lib/data/regional-snapshot.json";
+import skillsSnapshot from "@/lib/data/skills-snapshot.json";
+import stateGeometry from "@/lib/data/us-state-paths.json";
+import { CareerCard } from "@/components/career-card";
+import {
+  ButtonLink,
+  Eyebrow,
+  IconTile,
+  SectionHeading,
+} from "@/components/ui/primitives";
+import { Icon } from "@/components/ui/icon";
+import { careerFields, getField, occupations } from "@/lib/data/occupations";
 
 export default function Home() {
+  const featured = occupations.slice(0, 3);
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
+    <main id="main-content">
+      <CareerDashboard
+        careers={occupations}
+        fields={careerFields}
+        observations={regionalSnapshot.records}
+        ratings={skillsSnapshot.records}
+        states={stateGeometry.states}
+      />
+
+      <section className="section container" id="explore-fields">
+        <SectionHeading
+          eyebrow="Follow your curiosity"
+          title={
+            <>
+              There’s more than one <em>way forward.</em>
+            </>
+          }
+          description="Start with a field that interests you. See where it could lead."
+          action={
+            <Link className="text-link" href="/careers">
+              Explore all careers <Icon name="arrow" size={18} />
+            </Link>
+          }
         />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.tsx
-            </code>{" "}
-            file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
+        <div className="field-grid">
+          {careerFields.map((field, index) => (
+            <Link
+              href={`/careers?field=${field.id}`}
+              className="field-card"
+              key={field.id}
             >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+              <IconTile name={field.icon} gold={index === 4} />
+              <div>
+                <h3>{field.name}</h3>
+                <p>{field.description}</p>
+              </div>
+              <Icon name="arrow-up" className="field-card-arrow" size={19} />
+            </Link>
+          ))}
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
+      </section>
+
+      <section className="section section-tinted" id="how-it-works">
+        <div className="container">
+          <SectionHeading
+            eyebrow="From curiosity to clarity"
+            title={
+              <>
+                A big decision. <em>Smaller steps.</em>
+              </>
+            }
+            description="Get to know the work before deciding where you want to go."
+          />
+          <div className="steps-grid">
+            {[
+              {
+                number: "01",
+                icon: "compass" as const,
+                title: "Explore the possibilities",
+                text: "Follow an interest, a skill, or a subject you enjoy. Discover careers you might not have considered.",
+              },
+              {
+                number: "02",
+                icon: "chart" as const,
+                title: "Understand the whole picture",
+                text: "Look beyond a job title. Learn about pay, daily work, education, and the outlook ahead.",
+              },
+              {
+                number: "03",
+                icon: "route" as const,
+                title: "Find your way in",
+                text: "Explore typical and alternative entry routes, then identify the knowledge you can start building.",
+              },
+            ].map((step) => (
+              <article className="step-card" key={step.number}>
+                <div className="step-top">
+                  <IconTile name={step.icon} />
+                  <span>{step.number}</span>
+                </div>
+                <h3>{step.title}</h3>
+                <p>{step.text}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section container">
+        <SectionHeading
+          eyebrow="Open a new door"
+          title={
+            <>
+              Different careers. <em>Real possibilities.</em>
+            </>
+          }
+          description="Three starting points from our growing, carefully sourced directory."
+          action={
+            <Link className="text-link" href="/careers">
+              View the directory <Icon name="arrow" size={18} />
+            </Link>
+          }
+        />
+        <div className="career-grid">
+          {featured.map((occupation) => (
+            <CareerCard
+              key={occupation.id}
+              occupation={occupation}
+              field={getField(occupation.fieldId)}
             />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+          ))}
         </div>
-      </main>
-    </div>
+        <p className="data-caption">
+          <Icon name="info" size={15} />
+          National median wages, May 2025. Growth projections, 2025–2035.
+          Medians are not starting salaries.{" "}
+          <Link href="/resources">
+            About the data <Icon name="arrow-up" size={12} />
+          </Link>
+        </p>
+      </section>
+
+      <section className="container">
+        <div className="knowledge-banner">
+          <div className="banner-book">
+            <Icon name="book" size={46} />
+          </div>
+          <div>
+            <Eyebrow gold>Knowledge is a good place to start</Eyebrow>
+            <h2>
+              You don’t need it all figured out.
+              <br />
+              <em>Just take the next step.</em>
+            </h2>
+            <p>
+              A future in healthcare, technology, a trade, or something
+              unexpected. Give yourself room to explore.
+            </p>
+          </div>
+          <ButtonLink href="/careers" arrow>
+            Explore your possibilities
+          </ButtonLink>
+        </div>
+      </section>
+    </main>
   );
 }
